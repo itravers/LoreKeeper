@@ -10,13 +10,11 @@ namespace LoreKeeper
         static void Main(string[] args)
         {
             // Use argument or fallback to default
-            string storyName = args.Length > 0 ? args[0] : "test2";
+            string storyName = args.Length > 0 ? args[0] : "test3";
 
             string baseDir = AppContext.BaseDirectory;
-            string projectRoot = System.IO.Path.GetFullPath(System.IO.Path.Combine(AppContext.BaseDirectory, "..", "..", ".."));
+            string projectRoot = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDir, "..", "..", ".."));
             string jsonPath = System.IO.Path.Combine(projectRoot, "CompiledInk", $"{storyName}.json");
-
-
 
             if (!File.Exists(jsonPath))
             {
@@ -28,6 +26,7 @@ namespace LoreKeeper
 
             string inkJson = File.ReadAllText(jsonPath);
             var story = new Story(inkJson);
+            story.ChoosePathString("main");
 
             var llm = new LLMInterface();
 
@@ -48,13 +47,13 @@ namespace LoreKeeper
                 Console.Write(">> ");
                 string userInput = Console.ReadLine();
 
-                // Step 4: Pass to mock LLM
-                var response = llm.GetResponse(story.currentText, choices, userInput);
+                string inkResult = null;
 
-                Console.WriteLine($"LLM: {response.say_to_user}");
+                // Step 4: Get command from LLM
+                var cmd = llm.GetCommand(story.currentText, choices, userInput);
 
-                // Step 5: Execute command
-                var cmd = response.command;
+                // Step 5: Run command (set inkResult if calling a function)
+
                 switch (cmd.command)
                 {
                     case "make_choice":
@@ -74,16 +73,34 @@ namespace LoreKeeper
                         Console.WriteLine("Story restarted.");
                         break;
 
+                    case "call_function":
+                        try
+                        {
+                            object result = cmd.args != null
+                                ? story.EvaluateFunction(cmd.name, cmd.args.ToArray())
+                                : story.EvaluateFunction(cmd.name);
+
+                            if (result is string text && !string.IsNullOrWhiteSpace(text))
+                            {
+                                inkResult = text.Trim();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"[Error] Failed to call function '{cmd.name}': {ex.Message}");
+                        }
+                        break;
+
                     default:
                         Console.WriteLine($"Unknown command: {cmd.command}");
                         break;
                 }
 
-                // End condition
-                if (!story.canContinue && story.currentChoices.Count == 0)
+                // Step 6: Let the LLM narrate the result
+                if (!string.IsNullOrWhiteSpace(inkResult))
                 {
-                    Console.WriteLine("== THE END ==");
-                    break;
+                    string narration = llm.NarrateResult(inkResult);
+                    Console.WriteLine($"LLM: {narration}");
                 }
             }
         }
