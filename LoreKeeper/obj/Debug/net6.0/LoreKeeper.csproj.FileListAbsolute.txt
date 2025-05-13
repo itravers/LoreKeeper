@@ -1,0 +1,15 @@
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\bin\Debug\net6.0\LoreKeeper.exe
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\bin\Debug\net6.0\LoreKeeper.deps.json
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\bin\Debug\net6.0\LoreKeeper.runtimeconfig.json
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\bin\Debug\net6.0\LoreKeeper.dll
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\bin\Debug\net6.0\LoreKeeper.pdb
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\obj\Debug\net6.0\LoreKeeper.csproj.AssemblyReference.cache
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\obj\Debug\net6.0\LoreKeeper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\obj\Debug\net6.0\LoreKeeper.AssemblyInfoInputs.cache
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\obj\Debug\net6.0\LoreKeeper.AssemblyInfo.cs
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\obj\Debug\net6.0\LoreKeeper.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\obj\Debug\net6.0\LoreKeeper.dll
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\obj\Debug\net6.0\refint\LoreKeeper.dll
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\obj\Debug\net6.0\LoreKeeper.pdb
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\obj\Debug\net6.0\LoreKeeper.genruntimeconfig.cache
+C:\Users\admin\Documents\Workspace\LoreKeeper\LoreKeeper\LoreKeeper\obj\Debug\net6.0\ref\LoreKeeper.dll
