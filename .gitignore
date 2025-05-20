@@ -1,0 +1,85 @@
+# ========================
+# .NET / C# / Visual Studio
+# ========================
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+TestResults/
+*.dbmdl
+*.pdb
+*.exe
+*.dll
+*.log
+*.nupkg
+*.cache
+*.csproj.user
+
+# Rider
+.idea/
+
+# Launch profiles (local config)
+launchSettings.json
+
+# Temporary build and debugging files
+*.tmp
+*.bak
+*.old
+
+# ========================
+# Python
+# ========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+*.whl
+*.spec
+*.log
+
+# Virtual environments
+loreenv/
+venv/
+.env/
+.env.bak/
+.envrc
+
+# ========================
+# Project-specific
+# ========================
+
+# Secret keys
+.env
+.env.*
+
+# Voice output and temporary audio
+output_audio/
+temp_input.wav
+*.wav
+
+# Transcribed text artifacts
+*.txt
+*.json
+
+# Cache and downloaded models
+model.bin
+vocabulary.txt
+tokenizer.json
+*.onnx
+*.pt
+
+# Whisper + faster-whisper cached downloads
+whisper_cache/
+whisper_output/
+
+# ========================
+# OS-specific junk
+# ========================
+.DS_Store
+Thumbs.db
+desktop.ini
